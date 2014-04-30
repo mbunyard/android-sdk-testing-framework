@@ -10,34 +10,16 @@ android {
         versionCode 1
         versionName "1.0"
 
-        // Implied
-        /*
-        packageName "value from manifest if present"
-        testPackageName "app package name + “.test”"
-        testInstrumentationRunner "android.test.InstrumentationTestRunner"
-        */
+        // Implied properties and values
+        // packageName "value from manifest if present"
+        // testPackageName "app package name + “.test”"
+        // testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
-    }
-
-    sourceSets {
-        /*
-        main {
-            dirs.each { dir ->
-                java.srcDirs "src/${dir}/java"
-                res.srcDirs "src/${dir}/res"
-            }
-        }
-        */
-        //instrumentTest.setRoot('tests')
-        //instrumentTest.java.srcDirs = ['tests/src']
-        androidTest.setRoot('tests')
-        androidTest.java.srcDirs = ['tests/src']
-
     }
 }
 

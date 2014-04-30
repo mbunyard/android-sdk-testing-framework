@@ -1,4 +1,4 @@
-package com.mattbunyard.androidsdktestingframework;
+package com.mattbunyard.androidsdktestingframework.test;
 
 import android.test.InstrumentationTestCase;
 
