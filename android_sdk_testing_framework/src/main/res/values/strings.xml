@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android SDK Testing Framework</string>
+    <string name="hide_title">Hide Title</string>
+    <string name="show_title">Show Title</string>
 </resources>
