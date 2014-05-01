@@ -1,11 +1,14 @@
-Android SDK Testing Framework
+Android SDK Testing Framework Sample App
 =============================
 
-A sample project to practice implementing and using the Android SDK's testing framework.
+A project to practice implementing and using the Android SDK's testing framework.
 
 References
+
 http://developer.android.com/training/testing.html
+
 http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Project-Structure
+
 http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Testing
 
 [UI Tests](http://developer.android.com/training/activity-testing/activity-ui-testing.html)
