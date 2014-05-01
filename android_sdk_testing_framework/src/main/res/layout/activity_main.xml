@@ -17,4 +17,10 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/startNewActivity"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/startNewActivity" />
+
 </LinearLayout>

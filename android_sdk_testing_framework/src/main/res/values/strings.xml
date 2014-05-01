@@ -2,4 +2,6 @@
     <string name="app_name">Android SDK Testing Framework</string>
     <string name="hide_title">Hide Title</string>
     <string name="show_title">Show Title</string>
+    <string name="startNewActivity">Start New Activity</string>
+    <string name="title_new_activity">New Activity</string>
 </resources>
