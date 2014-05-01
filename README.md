@@ -1,7 +1,7 @@
 Android SDK Testing Framework Sample App
 =============================
 
-A project to practice implementing and using the Android SDK's testing framework.
+A sample app to practice implementing and using the Android SDK's testing framework.
 
 References
 http://developer.android.com/training/testing.html
