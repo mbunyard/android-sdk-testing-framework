@@ -26,13 +26,14 @@ import com.mattbunyard.androidsdktestingframework.activity.MainActivity;
  *      - Verifying that a TextView displays the expected string when a button is pushed.
  *
  */
-public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
+public class MainActivityUITest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     private MainActivity activity;
     private TextView titleTextView;
     private Button hideShowButton;
+    private Button startNewActivityButton;
 
-    public MainActivityTest() {
+    public MainActivityUITest() {
         super(MainActivity.class);
     }
 
@@ -43,9 +44,11 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         // Prevent the UI control from taking focus when test clicks it programmatically
         setActivityInitialTouchMode(true);
 
+        // Obtain necessary references for testing
         activity = getActivity();
         titleTextView = (TextView) activity.findViewById(R.id.title);
         hideShowButton = (Button) activity.findViewById(R.id.hideShow);
+        startNewActivityButton = (Button) activity.findViewById(R.id.startNewActivity);
     }
 
     /**
@@ -55,6 +58,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertNotNull("activity is null", activity);
         assertNotNull("titleTextView is null", titleTextView);
         assertNotNull("hideShowButton is null", hideShowButton);
+        assertNotNull("startNewActivityButton is null", startNewActivityButton);
     }
 
     /**
@@ -82,10 +86,20 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      * Test hide/show button is displayed to user
      */
     @MediumTest
+    public void testStartNewActivityButton_layout() {
+        final View decorView = activity.getWindow().getDecorView();
+        ViewAsserts.assertOnScreen(decorView, startNewActivityButton);
+        // assertTrue(startNewActivityButton.getVisibility() == View.VISIBLE);
+    }
+
+    /**
+     * Test hide/show button is displayed to user
+     */
+    @MediumTest
     public void testHideShowButton_layout() {
         final View decorView = activity.getWindow().getDecorView();
         ViewAsserts.assertOnScreen(decorView, hideShowButton);
-        // assertTrue(titleTextView.getVisibility() == View.VISIBLE);
+        // assertTrue(hideShowButton.getVisibility() == View.VISIBLE);
     }
 
     /**
@@ -93,9 +107,12 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
      */
     @MediumTest
     public void testHideShowButton_clickButtonAndExpectVisibilityChange() {
+        // Verify first click updates title and button text
         TouchUtils.clickView(this, hideShowButton);
         assertTrue(titleTextView.getVisibility() == View.INVISIBLE);
         assertEquals(activity.getString(R.string.show_title), hideShowButton.getText().toString());
+
+        // Verify second click reverts title and button text to original state
         TouchUtils.clickView(this, hideShowButton);
         assertTrue(titleTextView.getVisibility() == View.VISIBLE);
         assertEquals(activity.getString(R.string.hide_title), hideShowButton.getText().toString());
