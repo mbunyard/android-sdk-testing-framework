@@ -78,11 +78,18 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertEquals(expected, actual);
     }
 
-    // TODO: test button present
-    // TODO: test button text
+    /**
+     * Test hide/show button is displayed to user
+     */
+    @MediumTest
+    public void testHideShowButton_layout() {
+        final View decorView = activity.getWindow().getDecorView();
+        ViewAsserts.assertOnScreen(decorView, hideShowButton);
+        // assertTrue(titleTextView.getVisibility() == View.VISIBLE);
+    }
 
     /**
-     * Test hide/show button click and visibility change of title text
+     * Test hide/show button click and visibility change of title text with button text change
      */
     @MediumTest
     public void testHideShowButton_clickButtonAndExpectVisibilityChange() {
