@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
         hideShowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "***** click fired *****");
                 updateTitleVisibility();
                 updateButtonText();
             }
