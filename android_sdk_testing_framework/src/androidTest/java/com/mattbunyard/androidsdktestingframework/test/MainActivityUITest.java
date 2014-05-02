@@ -37,6 +37,10 @@ public class MainActivityUITest extends ActivityInstrumentationTestCase2<MainAct
         super(MainActivity.class);
     }
 
+    /**
+     * Instantiate test fixture and initialize member variables for use in testing
+     * @throws Exception
+     */
     @Override
     protected void setUp() throws Exception {
         super.setUp();
